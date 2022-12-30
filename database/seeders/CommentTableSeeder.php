@@ -14,6 +14,9 @@ class CommentTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $a = new Comment;
+        $a->content = 'I like margarita!';
+        $a->post_id = 1;
+        $a->save();
     }
 }

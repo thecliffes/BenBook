@@ -14,6 +14,10 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $a = new Post;
+        $a->title = 'Best pizza of 2022';
+        $a->content = 'pepperoni obviously';
+        $a->user_id = 1;
+        $a->save();
     }
 }

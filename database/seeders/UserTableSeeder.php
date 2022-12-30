@@ -14,6 +14,10 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $a-> new User;
+        $a->name = 'Ben';
+        $a->email = 'bencliffe1@gmail.com';
+        $a->password = 'hihello15';
+        $a->save();
     }
 }
