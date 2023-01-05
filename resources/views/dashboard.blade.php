@@ -12,7 +12,7 @@
                 <ul>
                     @foreach ($posts as $post)
                         <ul>
-                            <div class="py-1">
+                            <div class="py-2">
                                 <li>{{ $post -> user -> name }}</li>
                                 <li>{{ $post -> title }}</li>
                                 <li>{{ $post -> content }}</li>
