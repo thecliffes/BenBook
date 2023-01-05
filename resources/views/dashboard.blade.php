@@ -13,10 +13,11 @@
                     @foreach ($users as $user)
                         <ul>
                             <li>{{ $user -> name }}</li>
-                            <li>{{ $user -> post -> title }}</li>
+                            <li>{{ $user -> post_id }}</li>
                         </ul>
                     @endforeach
                 </ul>
+                
             </div>
         </div>
     </div>
