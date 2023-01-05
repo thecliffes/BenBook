@@ -15,11 +15,13 @@
         </div>
     </div>
 
-    <ul>
-        @foreach ($users as $user)
-            <li>{{ $user -> name }}</li>
-        @endforeach
-    </ul>
+    <div class="p-6 text-gray-900">
+        <ul>
+            @foreach ($users as $user)
+                <li>{{ $user -> name }}</li>
+            @endforeach
+        </ul>
+    </div>
         
 
 </x-app-layout>
