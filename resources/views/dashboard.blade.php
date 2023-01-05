@@ -11,7 +11,10 @@
             <div class="p-6 text-gray-900">
                 <ul>
                     @foreach ($users as $user)
-                        <li>{{ $user -> name }}</li>
+                        <ul>
+                            <li>{{ $user -> name }}</li>
+                            <li>{{ $user -> post -> title }}</li>
+                        </ul>
                     @endforeach
                 </ul>
             </div>

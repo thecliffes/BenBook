@@ -20,5 +20,7 @@ class PostTableSeeder extends Seeder
         $a->content = 'pepperoni obviously';
         $a->user_id = 1;
         $a->save();
+
+        Post::factory()->count(50)->create();
     }
 }

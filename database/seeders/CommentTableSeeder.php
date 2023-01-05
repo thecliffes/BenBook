@@ -19,5 +19,7 @@ class CommentTableSeeder extends Seeder
         $a->content = 'I like margarita!';
         $a->post_id = 1;
         $a->save();
+
+        Comment::factory()->count(20)->create();
     }
 }
