@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ Route::get('/', function () {
     return view('users/home');
 });
 
-Route::get('/dashboard', [UserController::class, 'index']
+Route::get('/dashboard', [PostController::class, 'index']
 )->middleware(['auth', 'verified'])->name('dashboard');;
 
 Route::get('/newpost', function () {

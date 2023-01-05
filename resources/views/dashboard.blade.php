@@ -10,10 +10,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="p-6 text-gray-900">
                 <ul>
-                    @foreach ($users as $user)
+                    @foreach ($posts as $post)
                         <ul>
-                            <li>{{ $user -> name }}</li>
-                            <li>{{ $user -> post_id }}</li>
+                            <li>{{ $post -> title }}</li>
+                            <li>{{ $post -> user_id }}</li>
                         </ul>
                     @endforeach
                 </ul>
