@@ -19,7 +19,7 @@ class CommentFactory extends Factory
     {
         return [
             'content' => fake()->text(),
-            'post_id' => fake()->numberBetween(1, (Post::get()->count())),
+            'post_id' => fake()->numberBetween(1,(Post::get()->count())),
         ];
     }
 }

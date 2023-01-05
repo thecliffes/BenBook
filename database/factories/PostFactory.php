@@ -20,7 +20,7 @@ class PostFactory extends Factory
         return [
             'title' => fake()->text(),
             'content' => fake()->text(),
-            'user_id' => fake()->numbersBetween(1, (User::get()->count())),
+            'user_id' => fake()->numberBetween(1,(User::get()->count())),
         ];
     }
 }
