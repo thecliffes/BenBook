@@ -12,8 +12,11 @@
                 <ul>
                     @foreach ($posts as $post)
                         <ul>
-                            <li>{{ $post -> title }}</li>
-                            <li>{{ $post -> user_id }}</li>
+                            <div class="py-1">
+                                <li>{{ $post -> user -> name }}</li>
+                                <li>{{ $post -> title }}</li>
+                                <li>{{ $post -> content }}</li>
+                            </div>
                         </ul>
                     @endforeach
                 </ul>
