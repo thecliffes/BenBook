@@ -19,7 +19,7 @@ class PostController extends Controller
         $posts = Post::all();
         $comments = Comment::all();
         $users = User::all();
-        return view('dashboard', compact('comments', 'posts', 'users'));
+        return view(('dashboard'), compact('comments', 'posts', 'users'));
     }
 
     /**
