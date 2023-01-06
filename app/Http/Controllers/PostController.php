@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -17,7 +18,8 @@ class PostController extends Controller
     {
         $posts = Post::all();
         $comments = Comment::all();
-        return view('dashboard', compact('comments', 'posts'));
+        $users = User::all();
+        return view('dashboard', compact('comments', 'posts', 'users'));
     }
 
     /**
