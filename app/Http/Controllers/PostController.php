@@ -43,11 +43,13 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required|max:255',
+            'user_id' => 'nullable|integer',
         ]);
 
         $u = new Post;
         $u->title = $validatedData['title'];
         $u->content = $validatedData['content'];
+        $u->user_id = $request->user()->id;
         $u->save();
 
         session()->flash('message', 'Post was created');
