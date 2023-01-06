@@ -16,10 +16,10 @@ class CommentTableSeeder extends Seeder
     public function run()
     {
         $a = new Comment;
-        $a->content = 'I like margarita!';
+        $a->reply = 'I like margarita!';
         $a->post_id = 1;
         $a->save();
 
-        Comment::factory()->count(20)->create();
+        Comment::factory()->count(30)->create();
     }
 }

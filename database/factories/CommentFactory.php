@@ -18,7 +18,7 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            'content' => fake()->text(),
+            'reply' => fake()->text(),
             'post_id' => fake()->numberBetween(1,(Post::get()->count())),
         ];
     }
