@@ -13,13 +13,17 @@
                     @foreach ($posts as $post)
                         <ul>
                             <div class="py-2">
+                                <span style= "font-weight: bold;"> Name:</span>
                                 <li>{{ $post -> user -> name }}</li>
+                                <span style= "font-weight: bold;"> Title:</span>
                                 <li>{{ $post -> title }}</li>
+                                <span style= "font-weight: bold;"> Post:</span>
                                 <li>{{ $post -> content }}</li>
-                                <li>{{ $post -> id }}</li>
+                                <span style= "font-weight: bold;"> Comments:</span>
                                 @foreach($comments as $comment)
                                     @if(($comment->post_id) === ($post->id))
-                                        <li>{{ $comment -> post -> reply}}</li>
+                                        <li>{{$comment -> post -> user -> name }}</li>
+                                        <li>{{ $comment -> reply }}</li>
                                     @endif
                                 @endforeach
                             </div>

@@ -18,6 +18,7 @@ class CommentTableSeeder extends Seeder
         $a = new Comment;
         $a->reply = 'I like margarita!';
         $a->post_id = 1;
+        $a->user_id = 1;
         $a->save();
 
         Comment::factory()->count(30)->create();

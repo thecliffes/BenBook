@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('reply');
             $table->timestamps();
 
-            $table->bigInteger('post_id')->references('id')->on('posts')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('post_id')->references('id')->on('posts')->
+                onDelete('cascade')->onUpdate('cascade');
+
+            $table->bigInteger('user_id')->references('id')->on('users')->
+                onDelete('cascade')->onUpdate('cascade');
         });
     }
 
