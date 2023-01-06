@@ -23,6 +23,10 @@ Route::get('/', function () {
 Route::get('/dashboard', [PostController::class, 'index']
 )->middleware(['auth', 'verified'])->name('dashboard');;
 
+Route::get('/newpost', [PostController::class, 'create'])->name('newpost');
+
+Route::post('/dashboard', [PostController::class, 'store'])->name('store');
+
 Route::get('/newpost', function () {
     return view('newpost');
 })->middleware(['auth', 'verified'])->name('newpost');

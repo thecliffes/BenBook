@@ -5,15 +5,19 @@
         </h2>
     </x-slot>
 
-
-    <form method="POST">
-        @csrf
-        <p>Title: <input type="text" name="name" 
-            value="{{ old('name') }}"></p>
-        <p>Content: <input type="text" name="email"
-            value="{{ old('email') }}"></p>
-        <input type="submit" value="Submit">
-        
-    </form>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="p-6 text-gray-900">
+                <form method="POST" action="{{ route('store') }}">
+                    @csrf
+                    <p>Title:</p> 
+                    <input type="text" name="title" value="{{ old('title') }}">
+                    <p>Content:</p>
+                    <input type="text" name="content" value="{{ old('content') }}">
+                    <input type="submit" value="Submit">                   
+                </form>
+            </div>
+        </div>
+    </div>
 
 </x-app-layout>
