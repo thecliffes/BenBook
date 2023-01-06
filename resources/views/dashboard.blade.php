@@ -13,16 +13,16 @@
                     @foreach ($posts as $post)
                         <ul>
                             <div class="py-2">
-                                <span style= "font-weight: bold;"> Name:</span>
+                                <b> Name:</b>
                                 <li>{{ $post -> user -> name }}</li>
-                                <span style= "font-weight: bold;"> Title:</span>
+                                <b> Title:</b>
                                 <li>{{ $post -> title }}</li>
-                                <span style= "font-weight: bold;"> Post:</span>
+                                <b> Post:</b>
                                 <li>{{ $post -> content }}</li>
-                                <span style= "font-weight: bold;"> Comments:</span>
+                                <b> Comments:</b>
                                 @foreach($comments as $comment)
                                     @if(($comment->post_id) === ($post->id))
-                                        <li>{{ $comment -> user -> name }}</li>
+                                        <li><u> {{ $comment -> user -> name }}</u></li>
                                         <li>{{ $comment -> reply }}</li>
                                     @endif
                                 @endforeach
