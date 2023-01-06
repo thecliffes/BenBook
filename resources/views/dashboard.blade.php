@@ -22,7 +22,7 @@
                                 <span style= "font-weight: bold;"> Comments:</span>
                                 @foreach($comments as $comment)
                                     @if(($comment->post_id) === ($post->id))
-                                        <li>{{$comment -> post -> user -> name }}</li>
+                                        <li>{{ $comment -> user -> name }}</li>
                                         <li>{{ $comment -> reply }}</li>
                                     @endif
                                 @endforeach
