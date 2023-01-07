@@ -43,7 +43,6 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required|max:255',
-            'user_id' => 'nullable|integer',
         ]);
 
         $u = new Post;
