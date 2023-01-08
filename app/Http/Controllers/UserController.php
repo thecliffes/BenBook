@@ -18,8 +18,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $posts = Post::all();
+        $comments = Comment::all();
         $user = $request->user();
-        return view('yourpage', compact('posts', 'user'));
+        return view('yourpage', compact('posts', 'comments', 'user'));
     }
 
     /**
