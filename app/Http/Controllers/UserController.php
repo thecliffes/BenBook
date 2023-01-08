@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
@@ -14,9 +15,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        
+        $posts = Post::all();
+        $user = $request->user();
+        return view('yourpage', compact('posts', 'user'));
     }
 
     /**
@@ -46,9 +49,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -57,9 +60,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request): View
     {
-        //
+        return view('yourpage', [
+            'user' => $request->user(),
+        ]);
     }
 
     /**

@@ -31,6 +31,7 @@ Route::post('/newpost', [PostController::class, 'store'])->name('store');
 
 
 
+
 Route::get('/newpost', function () {
     return view('newpost');
 })->middleware(['auth', 'verified'])->name('newpost');
@@ -38,6 +39,7 @@ Route::get('/newpost', function () {
 Route::get('/yourpage', function () {
     return view('yourpage');
 })->middleware(['auth', 'verified'])->name('yourpage');
+Route::get('/yourpage', [UserController::class, 'index'])->name('yourpage');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
