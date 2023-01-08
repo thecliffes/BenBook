@@ -19,7 +19,7 @@
                                 <li>{{ $post -> title }}</li>
                                 <b> Post:</b>
                                 <li>{{ $post -> content }}</li>
-                                <b> Comments:</b>
+                                <b> Comment:</b>
                                 <form method="POST" action="{{ route('store') }}">
                                     @csrf
                                     <input type="text" name="reply" value="{{ old('reply') }}">
