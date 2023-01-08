@@ -22,7 +22,7 @@
                                 <b> Comments:</b>
                                 <form method="POST" action="{{ route('store') }}">
                                     @csrf
-                                    <input type="text" name="comment" value="{{ old('reply') }}">
+                                    <input type="text" name="reply" value="{{ old('reply') }}">
                                     <input type="submit" value="Submit">
                                 </form>
                                 @foreach($comments as $comment)

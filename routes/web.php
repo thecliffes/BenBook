@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +21,10 @@ Route::get('/', function () {
     return view('users/home');
 });
 
-Route::get('/dashboard', [UserController::class, 'index']
+Route::get('/dashboard', [CommentController::class, 'index']
 )->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/dashboard', [UserController::class, 'create'])->name('dashboard');
-Route::post('/dashboard', [UserController::class, 'store'])->name('store');
+Route::get('/dashboard', [CommentController::class, 'create'])->name('dashboard');
+Route::post('/dashboard', [CommentController::class, 'store'])->name('store');
 
 Route::get('/newpost', [PostController::class, 'create'])->name('newpost');
 Route::post('/newpost', [PostController::class, 'store'])->name('store');
