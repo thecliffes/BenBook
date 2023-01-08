@@ -13,7 +13,7 @@
                     @foreach ($posts as $post)
                         <ul>
                                 @if(($post->user_id) === $user->id)
-                                    <div class="py-2">
+                                    <div class="py-6">
                                         <b> Title:</b>
                                         <li>{{ $post -> title }}</li>
                                         <b> Post:</b>
