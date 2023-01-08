@@ -18,14 +18,14 @@
                                     <li>{{ $post -> title }}</li>
                                     <b> Post:</b>
                                     <li>{{ $post -> content }}</li>
-                                @endif
-                                
-                                @foreach($comments as $comment)
+
+                                    @foreach($comments as $comment)
                                     @if(($comment->post_id) === ($post->id))
                                         <li><u> {{ $comment -> user -> name }}</u></li>
                                         <li>{{ $comment -> reply }}</li>
                                     @endif
                                 @endforeach
+                                @endif
                             </div>
                         </ul>
                     @endforeach
