@@ -12,21 +12,21 @@
                 </ul>
                     @foreach ($posts as $post)
                         <ul>
-                            <div class="py-2">
                                 @if(($post->user_id) === $user->id)
-                                    <b> Title:</b>
-                                    <li>{{ $post -> title }}</li>
-                                    <b> Post:</b>
-                                    <li>{{ $post -> content }}</li>
+                                    <div class="py-2">
+                                        <b> Title:</b>
+                                        <li>{{ $post -> title }}</li>
+                                        <b> Post:</b>
+                                        <li>{{ $post -> content }}</li>
 
-                                    @foreach($comments as $comment)
-                                    @if(($comment->post_id) === ($post->id))
-                                        <li><u> {{ $comment -> user -> name }}</u></li>
-                                        <li>{{ $comment -> reply }}</li>
-                                    @endif
-                                @endforeach
+                                        @foreach($comments as $comment)
+                                        @if(($comment->post_id) === ($post->id))
+                                            <li><u> {{ $comment -> user -> name }}</u></li>
+                                            <li>{{ $comment -> reply }}</li>
+                                        @endif
+                                        @endforeach
+                                    </div>
                                 @endif
-                            </div>
                         </ul>
                     @endforeach
                 </ul>
