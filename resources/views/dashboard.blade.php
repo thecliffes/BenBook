@@ -19,12 +19,6 @@
                                 <li>{{ $post -> title }}</li>
                                 <b> Post:</b>
                                 <li>{{ $post -> content }}</li>
-                                <b> Comment:</b>
-                                <form method="POST" action="{{ route('store') }}">
-                                    @csrf
-                                    <input type="text" name="reply" value="{{ old('reply') }}">
-                                    <input type="submit" value="Submit">
-                                </form>
                                 @foreach($comments as $comment)
                                     @if(($comment->post_id) === ($post->id))
                                         <li><u> {{ $comment -> user -> name }}</u></li>

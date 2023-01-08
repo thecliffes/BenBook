@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        
+        return view('comment');
     }
 
     /**
@@ -41,7 +41,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required|max:255',
+        ]);
+
+        $u = new Post;
+        $u->title = $validatedData['title'];
+        $u->content = $validatedData['content'];
+        $u->user_id = $request->user()->id;
+        $u->save();
+
+        session()->flash('message', 'Post was created');
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -63,7 +75,9 @@ class UserController extends Controller
      */
     public function edit(Request $request): View
     {
-        
+        return view('yourpage', [
+            'user' => $request->user(),
+        ]);
     }
 
     /**

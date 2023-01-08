@@ -50,7 +50,7 @@ class CommentController extends Controller
 
         $u = new Comment;
         $u->reply = $validatedData['reply'];
-        $u->post_id = $validatedData['post_id'];
+        $u->post_id = $request->post()->id;
         $u->user_id = $request->user()->id;
         $u->save();
 
