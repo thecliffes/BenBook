@@ -16,10 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        $comments = Comment::all();
-        $users = User::all();
-        return view(('dashboard'), compact('comments', 'posts', 'users'));
+        
     }
 
     /**
@@ -29,10 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $posts = Post::all();
-        $comments = Comment::all();
-        $users = User::all();
-        return view(('dashboard'), compact('comments', 'posts', 'users'));
+        
     }
 
     /**
@@ -43,18 +37,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'reply' => 'required|max:255',
-        ]);
-
-        $u = new Comment;
-        $u->reply = $validatedData['reply'];
-        $u->post_id = $request->post()->id;
-        $u->user_id = $request->user()->id;
-        $u->save();
-
-        session()->flash('message', 'Post was created');
-        return redirect()->route('dashboard');
+        
     }
 
     /**
