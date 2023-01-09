@@ -19,7 +19,7 @@ use App\Trivia;
 */
 
 Route::get('/', function () {
-    return view('users/home');
+    return view('/login');
 });
 
 Route::get('/dashboard', [CommentController::class, 'index']
