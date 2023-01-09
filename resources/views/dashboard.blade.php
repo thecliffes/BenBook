@@ -20,6 +20,21 @@
                                 <b> Post:</b>
                                 <li>{{ $post -> content }}</li>
                                 <b> Comment:</b>
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                                    <!-- Status message -->
+                                    <div class="statusMsg"></div>
+
+                                    <!-- File upload form -->
+                                    <div class="col-lg-12">
+                                        <form id="fupForm" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label for="name">Name:</label>
+                                                <input type="text" class="form-control" name="comment" placeholder="Enter comment" required />
+                                            </div>
+                                            
+                                            <input type="submit" name="submit" class="btn btn-primary submitBtn" value="SUBMIT"/>
+                                        </form>
+                                    </div>
                                 @foreach($comments as $comment)
                                     @if(($comment->post_id) === ($post->id))
                                         <li><u> {{ $comment -> user -> name }}</u></li>
