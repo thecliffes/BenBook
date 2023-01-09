@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
+use App\Trivia;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::post('/dashboard', [CommentController::class, 'store'])->name('store');
 
 Route::get('/dashboard/comment', [UserController::class, 'create'])->name('comment');
 
+Route::get('/newpost', [PostController::class, 'index'])->name('newpost');
 Route::get('/newpost', [PostController::class, 'create'])->name('newpost');
 Route::post('/newpost', [PostController::class, 'store'])->name('store');
 
