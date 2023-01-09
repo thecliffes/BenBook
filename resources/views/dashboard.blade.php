@@ -19,6 +19,7 @@
                                 <li>{{ $post -> title }}</li>
                                 <b> Post:</b>
                                 <li>{{ $post -> content }}</li>
+                                <b> Comment:</b>
                                 @foreach($comments as $comment)
                                     @if(($comment->post_id) === ($post->id))
                                         <li><u> {{ $comment -> user -> name }}</u></li>
@@ -28,6 +29,7 @@
                             </div>
                         </ul>
                     @endforeach
+                    {{ $posts->links() }}
                 </ul>
                 
             </div>

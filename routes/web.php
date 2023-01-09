@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [CommentController::class, 'index']
 )->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/dashboard', [CommentController::class, 'create'])->name('dashboard');
+
 Route::post('/dashboard', [CommentController::class, 'store'])->name('store');
 
 Route::get('/dashboard/comment', [UserController::class, 'create'])->name('comment');

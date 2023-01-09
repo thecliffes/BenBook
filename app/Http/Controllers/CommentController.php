@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Comment;
@@ -16,10 +17,10 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(3);
         $comments = Comment::all();
         $users = User::all();
-        return view(('dashboard'), compact('comments', 'posts', 'users'));
+        return view(('dashboard'), compact('comments','posts', 'users'));    
     }
 
     /**
@@ -29,10 +30,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        $posts = Post::all();
-        $comments = Comment::all();
-        $users = User::all();
-        return view(('dashboard'), compact('comments', 'posts', 'users'));
+    
     }
 
     /**
